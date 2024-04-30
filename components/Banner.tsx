@@ -2,11 +2,11 @@ import Image from "next/image";
 import BannerProps from "@/types/Banner";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 
-const Banner = ({ title, summary, backgroundImage }: BannerProps) => {
+const Banner = ({ title, summary, backgroundImage, ratio }: BannerProps) => {
     return (
         <div className="container mx-auto py-12 md:py-16 lg:py-20">
             <div className="relative h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden rounded-lg">
-                <AspectRatio ratio={16 / 10}>
+                <AspectRatio ratio={eval(ratio)}>
                     <Image
                         alt="Banner Image"
                         className="absolute inset-0 h-full w-full object-cover"
